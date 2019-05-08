@@ -68,28 +68,7 @@ int main() {
     return 0;
 }
 
-//Esta función recibe la dirección de una matriz, su cantidad de filas y columnas y limpia su marco.
-void clean (char world [ROWS] [COLS], int i, int j) {
-	int a;	 
-	for (a=0; a<j; a++) {
-		set_cell_state(world,0,a,DEAD);								//Limpia primera fila.
-		set_cell_state(world,i-1,a,DEAD);							//Limpia la última fila.
-	}
-	for (a=1 ; a<=i-2 ; a++) {
-		set_cell_state(world,a,0,DEAD);								//Limpia la primer columna, excepto las celdas que ya se habían limpiado.
-		set_cell_state(world,a,j-1,DEAD);							//Limpia la última columna, excepto las celdas que ya se habían limpiado.	
-	}
-}
 
-//Esta función toma como parámetros un mundo, una célula y un estado, y setea esa célula en el estado elegido.
-void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
-    switch(state){
-        case ALIVE: world[i][j] = ALIVE;    break;
-        case DEAD:  world[i][j] = DEAD;     break;
-        default: printf("Error in set_cell_state\n"); break;
-    }
-    return;
-}
 
 
 //Esta función toma como parámetros dos mundos, y copia el contenido del segundo en el primero.
@@ -153,16 +132,7 @@ void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COL
 	return;
 }
 
-//Esta función recibe como parámetro el estado de una célula individual,
-//y devuelve un 1 si está viva, o un 0 si está muerta.
-int get_cell_state(char cell){
-    if(cell == ALIVE){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-}
+
 
 
 
