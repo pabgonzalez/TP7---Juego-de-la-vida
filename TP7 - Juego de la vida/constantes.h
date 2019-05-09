@@ -8,7 +8,9 @@
 #ifndef CONSTANTES_H
 #define	CONSTANTES_H
 
-//Declaración de constantes.
+/*******************************************************************************
+ * CONSTANT AND MACRO DEFINITIONS USING #DEFINE
+ ******************************************************************************/
 #define DEAD  ' '
 #define ALIVE 'X'
 #define COLS  19

@@ -1,6 +1,25 @@
+/*******************************************************************************
+  @file     +logico.c+
+  @brief    +Realiza las tareas lógicas del juego+
+  @author   +GRUPO 2+
+ ******************************************************************************/
+
+/*******************************************************************************
+ * INCLUDE HEADER FILES
+ ******************************************************************************/
 #include "logico.h"
+
+/*******************************************************************************
+ * FUNCTION PROTOTYPES FOR PRIVATE FUNCTIONS WITH FILE LEVEL SCOPE
+ ******************************************************************************/
 static void set_cell_state(char world[ROWS][COLS], int i, int j, int state);
 static int get_cell_state(char);
+
+/*******************************************************************************
+ *******************************************************************************
+                        GLOBAL FUNCTION DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
 
 //Esta función recibe la dirección de una matriz, su cantidad de filas y columnas y limpia su marco.
 void clean (char world [ROWS] [COLS], int i, int j) {
@@ -13,16 +32,6 @@ void clean (char world [ROWS] [COLS], int i, int j) {
 		set_cell_state(world,a,0,DEAD);						//Limpia la primer columna, excepto las celdas que ya se habían limpiado.
 		set_cell_state(world,a,j-1,DEAD);					//Limpia la última columna, excepto las celdas que ya se habían limpiado.	
 	}
-}
-
-//Esta función toma como parámetros un mundo, una célula y un estado, y setea esa célula en el estado elegido.
-static void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
-    switch(state){
-        case ALIVE: world[i][j] = ALIVE;    break;
-        case DEAD:  world[i][j] = DEAD;     break;
-        default: printf("Error in set_cell_state\n"); break;
-    }
-    return;
 }
 
 //Esta función toma como parámetros dos mundos, y copia el contenido del segundo en el primero.
@@ -58,6 +67,22 @@ void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COL
 			break;
 	}
 	return;
+}
+
+/*******************************************************************************
+ *******************************************************************************
+                        LOCAL FUNCTION DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+//Esta función toma como parámetros un mundo, una célula y un estado, y setea esa célula en el estado elegido.
+static void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
+    switch(state){
+        case ALIVE: world[i][j] = ALIVE;    break;
+        case DEAD:  world[i][j] = DEAD;     break;
+        default: printf("Error in set_cell_state\n"); break;
+    }
+    return;
 }
 
 //Esta función recibe como parámetro el estado de una célula individual,

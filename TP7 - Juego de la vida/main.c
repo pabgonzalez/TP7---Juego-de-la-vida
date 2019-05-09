@@ -1,6 +1,15 @@
-//TRABAJO PRÁCTICO 7 - JUEGO DE LA VIDA
-//GRUPO 2: DE VINCENTI, FIGUEROA, GONZALEZ, MATTALONI VARONA.
+/*******************************************************************************
+  @file     +main.c+
+  @brief    +TP7 - Juego de la vida+
+  @author   +GRUPO 2: +OLIVIA DE VINCENTI
+                      +ALEJO FIGUEROA
+                      +PABLO GONZALEZ
+                      +BRENDA ANTONELLA MATTALONI VARONA
+ ******************************************************************************/
 
+/*******************************************************************************
+ * INCLUDE HEADER FILES
+ ******************************************************************************/
 #include <stdio.h>
 #include "constantes.h"
 #include "logico.h"
