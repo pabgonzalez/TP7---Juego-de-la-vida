@@ -1,4 +1,6 @@
 #include "logico.h"
+static void set_cell_state(char world[ROWS][COLS], int i, int j, int state);
+static int get_cell_state(char);
 
 //Esta función recibe la dirección de una matriz, su cantidad de filas y columnas y limpia su marco.
 void clean (char world [ROWS] [COLS], int i, int j) {
@@ -14,7 +16,7 @@ void clean (char world [ROWS] [COLS], int i, int j) {
 }
 
 //Esta función toma como parámetros un mundo, una célula y un estado, y setea esa célula en el estado elegido.
-void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
+static void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
     switch(state){
         case ALIVE: world[i][j] = ALIVE;    break;
         case DEAD:  world[i][j] = DEAD;     break;
@@ -60,7 +62,7 @@ void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COL
 
 //Esta función recibe como parámetro el estado de una célula individual,
 //y devuelve un 1 si está viva, o un 0 si está muerta.
-int get_cell_state(char cell){
+static int get_cell_state(char cell){
     if(cell == ALIVE){
         return 1;
     }

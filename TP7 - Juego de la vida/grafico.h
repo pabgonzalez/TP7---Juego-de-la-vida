@@ -9,7 +9,7 @@
 #define	GRAFICO_H
 #include "constantes.h"
 void print_world(char world[ROWS][COLS]);
-void print_line();
+
 
 #endif	/* GRAFICO_H */
 

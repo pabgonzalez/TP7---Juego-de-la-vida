@@ -1,4 +1,5 @@
 #include "grafico.h"
+static void print_line();
 
 //Esta función toma como parámetro un mundo, y lo imprime en pantalla, 
 //intercalando cada célula con un '|', y cada fila con una cadena de '-'.
@@ -17,7 +18,7 @@ void print_world(char world[ROWS][COLS]){
 }
 
 //Esta función imprime una línea de caracteres '-' que ocupa el ancho exacto del mundo.
-void print_line(){
+static void print_line(){
     int i;
     for(i=1; i<(((COLS-2)*4)+1); i++){
         printf("-");                            					//Se imprimen '-' hasta llegar al final del mundo.
