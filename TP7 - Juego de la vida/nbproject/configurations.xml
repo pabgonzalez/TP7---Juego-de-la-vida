@@ -40,6 +40,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <warningLevel>2</warningLevel>
+        </cTool>
       </compileType>
       <item path="constantes.h" ex="false" tool="3" flavor2="0">
       </item>
