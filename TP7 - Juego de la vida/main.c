@@ -3,21 +3,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "constantes.h"
 
-//Declaración de constantes.
-#define DEAD  ' '
-#define ALIVE 'X'
-#define COLS  19
-#define ROWS  19
 
 //Prototipos de funciones.
-void print_world(char world[ROWS][COLS]);
-void print_line();
-int get_cell_state(char);
-void set_cell_state(char world[ROWS][COLS], int i, int j, int state);
-void collapse_worlds(char world1[ROWS][COLS], char world2[ROWS][COLS]);
-void update_cell (char world [ROWS] [COLS], int i, int j, char world2[ROWS][COLS]);
-void clean (char world [ROWS] [COLS], int i, int j);
+
 
 int main() {
 	int i,j,gen=0;
