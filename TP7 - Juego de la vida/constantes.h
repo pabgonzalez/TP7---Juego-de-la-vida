@@ -1,9 +1,8 @@
-/* 
- * File:   constantes.h
- * Author: Pablo
- *
- * Created on 9 de mayo de 2019, 14:43
- */
+/*******************************************************************************
+  @file     +constantes.h+
+  @brief    +Defino constantes para compartirlas con todos los módulos.+
+  @author   +GRUPO 2+
+ ******************************************************************************/
 
 #ifndef CONSTANTES_H
 #define	CONSTANTES_H

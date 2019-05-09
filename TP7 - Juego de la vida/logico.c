@@ -21,7 +21,8 @@ static int get_cell_state(char);
  *******************************************************************************
  ******************************************************************************/
 
-//Esta función recibe la dirección de una matriz, su cantidad de filas y columnas y limpia su marco.
+//clean recibe la dirección de una matriz, su cantidad de filas y 
+//columnas y limpia su marco.
 void clean (char world [ROWS] [COLS], int i, int j) {
 	int a;	 
 	for (a=0; a<j; a++) {
@@ -34,20 +35,21 @@ void clean (char world [ROWS] [COLS], int i, int j) {
 	}
 }
 
-//Esta función toma como parámetros dos mundos, y copia el contenido del segundo en el primero.
+//collapse_worlds toma como parámetros dos mundos, y copia el contenido del 
+//segundo en el primero.
 void collapse_worlds(char world1[ROWS][COLS], char world2[ROWS][COLS]){
-    int i, j;
-    for(i=1; i<ROWS-1; i++){                                                            //Se recorren las filas.
-
-        for(j=1; j<COLS-1; j++){                                                        //Se recorren las columnas.
-            world1[i][j] = world2[i][j];						//Para cada célula pasa el contenido de world2 a world1.	
+        int i, j;
+        for(i=1; i<ROWS-1; i++){                                                        //Se recorren las filas.
+                for(j=1; j<COLS-1; j++){                                                //Se recorren las columnas.
+                        world1[i][j] = world2[i][j];					//Para cada célula pasa el contenido de world2 a world1.	
+                }
         }
-    }
-    return;
+        return;
 }
 
-//Esta función recibe la dirección de la matriz actual, las coordenadas de una célula, revisa el estado de 
-//sus células contiguas, y actualiza la matriz de la próxima generación.
+//update_cell recibe la dirección de la matriz actual, las coordenadas de una 
+//célula, revisa el estado de sus células contiguas, y actualiza la matriz de 
+//la próxima generación.
 void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COLS]) {
 	int x, y, count=0;
 
@@ -55,6 +57,7 @@ void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COL
 		for (y=j-1; y<=j+1; y++)						//Recorre verticalmente las células adyacentes.
 			count+=get_cell_state(world1 [x][y]);				//Incrementa el contador si la célula está viva.
 	}
+        
 	count-=get_cell_state(world1[i][j]);						//Resta 1 si la propia célula estaba viva, ya que no hay que contarla.
 
 	switch(count) {									//count es la cantidad de células adyacentes vivas.
@@ -75,23 +78,27 @@ void update_cell (char world1 [ROWS] [COLS], int i, int j, char world2[ROWS][COL
  *******************************************************************************
  ******************************************************************************/
 
-//Esta función toma como parámetros un mundo, una célula y un estado, y setea esa célula en el estado elegido.
+//set_cell_state toma como parámetros un mundo, una célula y un estado, y setea 
+//esa célula en el estado elegido.
 static void set_cell_state(char world[ROWS][COLS], int i, int j, int state){
-    switch(state){
-        case ALIVE: world[i][j] = ALIVE;    break;
-        case DEAD:  world[i][j] = DEAD;     break;
-        default: printf("Error in set_cell_state\n"); break;
-    }
-    return;
+        switch(state){
+                case ALIVE: world[i][j] = ALIVE;    
+                            break;
+                case DEAD:  world[i][j] = DEAD;     
+                            break;
+                default:    printf("Error in set_cell_state\n"); 
+                            break;
+        }
+        return;
 }
 
-//Esta función recibe como parámetro el estado de una célula individual,
-//y devuelve un 1 si está viva, o un 0 si está muerta.
+//get_cell_state recibe como parámetro el estado de una célula individual, y 
+//devuelve un 1 si está viva, o un 0 si está muerta.
 static int get_cell_state(char cell){
-    if(cell == ALIVE){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+        if(cell == ALIVE){
+                return 1;
+        }
+        else {
+                return 0;
+        }
 }
