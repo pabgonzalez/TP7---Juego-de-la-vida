@@ -8,16 +8,8 @@
 #ifndef GRAFICO_H
 #define	GRAFICO_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
+void print_world(char world[ROWS][COLS]);
+void print_line();
 
 #endif	/* GRAFICO_H */
 

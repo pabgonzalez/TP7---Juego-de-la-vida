@@ -8,16 +8,11 @@
 #ifndef LOGICO_H
 #define	LOGICO_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
+int get_cell_state(char);
+void set_cell_state(char world[ROWS][COLS], int i, int j, int state);
+void collapse_worlds(char world1[ROWS][COLS], char world2[ROWS][COLS]);
+void update_cell (char world [ROWS] [COLS], int i, int j, char world2[ROWS][COLS]);
+void clean (char world [ROWS] [COLS], int i, int j);
 
 #endif	/* LOGICO_H */
 
