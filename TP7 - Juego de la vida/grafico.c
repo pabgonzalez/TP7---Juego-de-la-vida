@@ -8,7 +8,6 @@
  * INCLUDE HEADER FILES
  ******************************************************************************/
 #include <stdio.h>
-#include "grafico.h"
 #include "constantes.h"
 
 /*******************************************************************************
@@ -44,7 +43,7 @@ void print_world(char world[ROWS][COLS]){
  *******************************************************************************
  ******************************************************************************/
 
-//print_line mprime una línea de caracteres '-' que ocupa el ancho exacto del mundo.
+//print_line imprime una línea de caracteres '-' que ocupa el ancho exacto del mundo.
 static void print_line(){
         int i;
         for(i=1; i<(((COLS-2)*4)+1); i++){

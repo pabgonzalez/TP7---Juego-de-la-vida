@@ -9,7 +9,6 @@
  ******************************************************************************/
 #include <stdio.h>
 #include "logico.h"
-#include "constantes.h"
 
 /*******************************************************************************
  * FUNCTION PROTOTYPES FOR PRIVATE FUNCTIONS WITH FILE LEVEL SCOPE
